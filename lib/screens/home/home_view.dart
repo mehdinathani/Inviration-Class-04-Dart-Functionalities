@@ -9,7 +9,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List<Product> _productList = productList;
+  List _productList = productList;
   List _categories =
       productList.map((product) => product.category).toSet().toList();
   List<Product> _favItems = [];
@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
                 itemBuilder: (context, index) {
                   final item = _productList[index];
                   return ListTile(
-                    title: Text(item.name),
+                    title: Text(item['name']),
                     subtitle: Text(item.description),
                     leading: IconButton(
                         onPressed: () {
